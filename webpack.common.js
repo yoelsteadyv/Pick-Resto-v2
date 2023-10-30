@@ -9,6 +9,7 @@ module.exports = {
   entry: {
     app: path.resolve(__dirname, 'src/scripts/index.js'),
     sw: path.resolve(__dirname, 'src/scripts/sw.js'),
+    vendor: path.resolve(__dirname, 'src/scripts/vendor.js'),
   },
   output: {
     filename: '[name].bundle.js',

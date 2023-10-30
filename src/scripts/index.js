@@ -1,7 +1,6 @@
 import '../styles/style.scss';
 import '../styles/responsive.scss';
 import './utils/header-footer-cstom';
-import './vendor';
 import App from './views/app';
 import swRegister from './utils/sw-register';
 import {
