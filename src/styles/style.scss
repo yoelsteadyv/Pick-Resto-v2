@@ -1,0 +1,850 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat&family=Poppins:wght@200;400&display=swap");
+@import "color";
+
+* {
+  font-family: "Poppins", sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  outline: none;
+  border: none;
+  text-transform: capitalize;
+  text-decoration: none;
+  transition: 0.2s linear;
+}
+body {
+  background-color: $bg !important;
+}
+
+html {
+  font-size: 62.5%;
+  overflow-x: hidden;
+  scroll-padding-top: 9rem;
+  scroll-behavior: smooth;
+}
+
+html::-webkit-scrollbar {
+  width: 0;
+}
+
+section {
+  padding: 2rem 7%;
+}
+
+.skip-link {
+  position: absolute;
+  top: -100%;
+  left: 50%;
+  background-color: rgba(0, 0, 5, 0.5);
+  color: $bg;
+  border-radius: 0.4rem;
+  padding: 8px;
+  font-size: 20px;
+  z-index: 99999;
+  transform: translate(-50%, -50%);
+  -webkit-border-radius: 0.4rem;
+  -moz-border-radius: 0.4rem;
+  -ms-border-radius: 0.4rem;
+  -o-border-radius: 0.4rem;
+}
+
+.skip-link:focus {
+  top: 3rem;
+}
+
+.heading {
+  text-align: center;
+  padding: 1.2rem 0;
+  margin-bottom: 3rem;
+  color: $abu1;
+  font-size: 4rem;
+}
+
+.heading span {
+  color: $hijau2;
+}
+
+.btn {
+  margin-top: 1rem;
+  display: inline-block;
+  min-width: 44px;
+  min-height: 44px;
+  padding: 1.7rem 3.5rem;
+  font-size: 1.7rem;
+  color: $coklat1;
+  border-radius: 0.5rem;
+  font-weight: bold;
+  background: $pink1;
+  cursor: pointer;
+}
+
+.btn:hover {
+  color: $pink1;
+  background: $coklat1;
+  box-shadow: $box-shadow;
+}
+
+.btn:focus {
+  border: 0.4rem solid $abu2;
+  border-radius: 0.5rem;
+}
+
+.btnd {
+  margin-top: 1rem;
+  display: block;
+  min-width: 44px;
+  min-height: 44px;
+  padding: 2rem 2rem;
+  font-size: 1.5rem;
+  color: $coklat1;
+  border: 0.1rem solid $abu2;
+  border-radius: 0.5rem;
+  background: $abu2;
+  cursor: pointer;
+  text-align: center;
+}
+
+.btnd:hover {
+  color: $abu2;
+  background: $coklat1;
+  box-shadow: $box-shadow;
+  transition: 0.3s linear;
+}
+
+.btnd i {
+  padding-right: 0.5rem;
+}
+
+.btnd span {
+  font-weight: bold;
+}
+
+.btnd:focus {
+  border: 0.4rem solid $coklat1;
+  border-radius: 0.5rem;
+}
+
+/* header */
+
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  background: $pink1;
+  box-shadow: $box-shadow;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 2rem 9%;
+}
+
+.header .logo {
+  display: flex;
+  align-items: center;
+  margin-right: 1rem;
+  font-size: 2.5rem;
+  font-weight: bolder;
+  color: $abu1;
+  min-height: 44px;
+  min-width: 44px;
+}
+.header .logo span {
+  color: $hijau1;
+}
+
+.header .logo:focus {
+  border: 0.4rem solid $coklat1;
+  border-radius: 0.5rem;
+}
+
+.header .navbar {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  flex-grow: 1;
+}
+
+.header .navbar a {
+  font-size: 1.7rem;
+  color: $abu1;
+  margin: 0 1rem;
+  min-width: 44px;
+  min-height: 44px;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+}
+
+.header .navbar span {
+  color: $hijau1;
+}
+
+.header .navbar a:focus {
+  border: 0.4rem solid $coklat1;
+  border-radius: 0.5rem;
+  padding: 0.4rem;
+}
+
+.header .navbar a:hover {
+  color: $coklat1;
+}
+
+.header .icons div {
+  font-size: 2.5rem;
+  margin-left: 1.7rem;
+  cursor: pointer;
+  color: $coklat1;
+}
+
+.header .icons div:hover {
+  color: $abu1;
+}
+
+#menu-btn {
+  display: none;
+  min-width: 44px;
+  min-height: 44px;
+  background-color: $pink1;
+}
+
+#menu-btn:focus {
+  border: 0.4rem solid $coklat1;
+  border-radius: 0.5rem;
+  padding: 0.4rem;
+}
+
+/* hero */
+
+.hero {
+  min-height: 100vh;
+  background: url(../public/images/hero-image_4.jpg);
+  background-size: cover !important;
+  background-position: center !important;
+  position: relative;
+  z-index: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hero::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.7);
+  z-index: -1;
+}
+
+.hero .content {
+  max-width: 60rem;
+  text-align: center;
+}
+
+.hero .content h3 {
+  font-size: 6rem;
+  color: $abu2;
+  padding-bottom: 1.5rem;
+}
+
+.hero .content h3 span {
+  color: $hijau2;
+}
+
+.hero .content h5 {
+  font-size: 2rem;
+  color: $abu2;
+  padding-bottom: 1.5rem;
+}
+.hero .content h5 span {
+  font-size: 2rem;
+  color: $hijau2;
+  padding-bottom: 1.5rem;
+}
+
+/* end */
+
+/* list-resto */
+#resto {
+  background-color: $bg;
+}
+
+.list-resto .box-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+  margin-top: 2.5rem;
+}
+
+.box {
+  background-color: $bg;
+  padding: 1rem;
+  border-radius: 0.5rem;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease-in-out;
+  overflow: hidden;
+}
+
+.box:hover {
+  transform: translateY(-0.25rem);
+}
+
+.list-resto .box-container .box {
+  box-shadow: $box-shadow;
+  margin-bottom: 20px;
+}
+
+.list-resto .box-container .box .image {
+  height: 35rem;
+  width: 100%;
+  padding: 1.1rem;
+  position: relative;
+}
+
+.list-resto .box-container .box .image img {
+  height: 100%;
+  width: 100%;
+  border-radius: 0.5rem;
+  object-fit: cover;
+}
+
+.locationList {
+  position: absolute;
+  left: 1.1rem;
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: $pink1;
+  background-color: rgba(0, 0, 5, 0.5);
+  padding: 1rem 1rem;
+  border-radius: 0.5rem 0;
+}
+.rateresList {
+  position: absolute;
+  right: 1.1rem;
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: $pink1;
+  background-color: rgba(0, 0, 5, 0.5);
+  padding: 1rem 1rem;
+  border-radius: 0 0.5rem;
+}
+
+.list-resto .box-container .box .content {
+  padding: 2rem;
+}
+
+.list-resto .box-container .box .content h3 {
+  font-size: 2.5rem;
+  color: $coklat1;
+}
+
+.list-resto .box-container .box .content .desc-res {
+  font-size: 2rem;
+  text-align: justify;
+  color: $coklat1;
+  padding: 1rem 0;
+}
+
+/* end */
+
+/* list-resto-detail */
+#resto-detail {
+  background-color: $bg;
+  margin-top: 8.5rem;
+  padding-top: 2rem;
+}
+
+.list-resto-detail .box-container {
+  display: block;
+  margin-top: 2.5rem;
+}
+
+.box {
+  background-color: $bg;
+  padding: 1rem;
+  border-radius: 0.5rem;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease-in-out;
+  overflow: hidden;
+}
+
+.box:hover {
+  transform: translateY(-0.25rem);
+}
+
+.list-resto-detail .box-container .box {
+  box-shadow: $box-shadow;
+  margin-bottom: 20px;
+}
+
+.list-resto-detail .box-container .box .image {
+  position: relative;
+  height: 35rem;
+  width: 100%;
+  padding: 1.1rem;
+  overflow: hidden;
+}
+
+.list-resto-detail .box-container .box .image img {
+  height: 100%;
+  width: 100%;
+  border-radius: 0.5rem;
+  object-fit: cover;
+}
+
+.list-resto-detail .box-container .box .content {
+  padding: 2rem;
+}
+
+.list-resto-detail .box-container .box .content h3 {
+  font-size: 2.5rem;
+  color: $coklat1;
+}
+
+.list-resto-detail .box-container .box .content i {
+  font-size: 1.7rem;
+  color: $hijau1;
+}
+
+.list-resto-detail .box-container .box .content span {
+  font-size: 1.7rem;
+  color: $hijau1;
+  font-weight: bold;
+}
+
+.list-resto-detail .box-container .box .content p {
+  font-size: 1.7rem;
+  text-align: justify;
+  color: $coklat1;
+  line-height: 2;
+  padding: 1rem 0;
+}
+
+.category-container {
+  margin-top: 1.1rem;
+}
+
+.category-heading {
+  font-size: 2rem;
+  color: $coklat1;
+}
+
+.categories {
+  font-size: 1.7rem;
+}
+
+.menu-container {
+  padding-left: 20rem;
+  padding-right: 3rem;
+  display: flex;
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.food-item,
+.drink-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 8px;
+  font-size: 1.7rem;
+}
+
+.food-item::before,
+.drink-item::before {
+  content: "";
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: $hijau1;
+  margin-right: 8px;
+}
+
+.food-menu,
+.drink-menu {
+  margin-bottom: 20px;
+  flex: 1;
+}
+
+.menu-heading {
+  font-size: 18px;
+  text-align: center;
+  width: 8rem;
+  font-weight: bold;
+  margin-bottom: 10px;
+  padding: 0.7rem;
+  background-color: $coklat1;
+  color: $abu3;
+  border: none;
+  border-radius: 5px;
+}
+
+.menu-list {
+  background-color: $abu3;
+  color: $coklat1;
+  padding: 0.8rem 1rem;
+  border-radius: 0.5rem;
+  margin-bottom: 10px;
+  margin-top: 1rem;
+}
+
+/* end */
+
+/* review */
+.review {
+  background-color: $bg;
+}
+.review .slide {
+  background-color: $pink2;
+  padding: 1.5rem;
+  box-shadow: $box-shadow;
+  border-radius: 0.5rem;
+  position: relative;
+  margin-bottom: 1rem;
+}
+
+.review .slide .user-info {
+  gap: 1rem;
+  display: flex;
+  padding-bottom: 0.5rem;
+  font-size: 2.7rem;
+  line-height: 1.8;
+  color: $merah;
+  align-items: center;
+}
+
+.review .slide .user {
+  display: flex;
+  gap: 1.5rem;
+  align-items: center;
+  background: $pink1;
+  padding: 1rem 1.5rem;
+  border-radius: 0.5rem;
+}
+
+.review .slide img {
+  display: flex;
+  height: 4rem;
+  width: 4rem;
+  border-radius: 15%;
+  object-fit: cover;
+  align-items: center;
+}
+
+.review .slide .user h3 {
+  color: $merah;
+  font-size: 1.7rem;
+}
+
+#review-container {
+  padding: 2rem;
+  background-color: $abu3;
+  border-radius: 0.5rem;
+  margin-top: 2rem;
+}
+#review-container h1 span {
+  color: $hijau1;
+}
+
+#review-form {
+  display: flex;
+  flex-direction: column;
+}
+
+#review-form label {
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+
+#review-form input {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+#review-form input,
+#review-form textarea {
+  min-height: 44px;
+  min-width: 44px;
+  padding: 1rem;
+  margin: 1rem 0;
+  font-size: 1.7rem;
+  color: $coklat1;
+  text-transform: capitalize;
+  border: 0.1rem solid transparent;
+  background: $bg;
+  border-bottom-color: $coklat1;
+  border-radius: 0.5rem 0.5rem 0 0;
+}
+
+#review-form input:focus,
+#review-form textarea:focus {
+  min-height: 44px;
+  min-width: 44px;
+  padding: 1rem;
+  margin: 1rem 0;
+  font-size: 1.7rem;
+  color: $coklat1;
+  text-transform: capitalize;
+  border: 0.1rem solid transparent;
+  background: $bg;
+  border-bottom-color: $coklat1;
+  border-radius: 0.5rem 0.5rem 0 0;
+  border-top-color: $coklat1;
+  border-right-color: $coklat1;
+  border-left-color: $coklat1;
+}
+#review-form textarea {
+  resize: none;
+  height: 15rem;
+}
+#review-form .btn-review {
+  margin-top: 1rem;
+  display: inline-block;
+  min-width: 44px;
+  min-height: 44px;
+  padding: 1.7rem 3.5rem;
+  font-size: 1.7rem;
+  color: $coklat1;
+  border-radius: 0.5rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  background: $abu2;
+  cursor: pointer;
+}
+
+#review-form .btn-review:hover {
+  color: $abu2;
+  background: $coklat1;
+  box-shadow: $box-shadow;
+}
+
+#review-form .btn-review:focus {
+  border: 0.4rem solid $abu2 !important;
+  border-radius: 0.5rem;
+  color: $abu2;
+  background-color: $coklat1;
+}
+/* end */
+
+/* list-resto-favorite */
+#resto-favorite {
+  background-color: $bg;
+  margin-top: 8.5rem;
+  padding-top: 2rem;
+  min-height: 100vh;
+}
+
+.list-resto-favorite .box-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+  margin-top: 2.5rem;
+}
+
+.box {
+  background-color: $abu3;
+  padding: 1rem;
+  border-radius: 0.5rem;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease-in-out;
+  overflow: hidden;
+}
+
+.box:hover {
+  transform: translateY(-0.25rem);
+}
+
+.list-resto-favorite .box-container .box {
+  box-shadow: $box-shadow;
+  margin-bottom: 20px;
+}
+
+.list-resto-favorite .box-container .box .image {
+  position: relative;
+  height: 35rem;
+  width: 100%;
+  padding: 1.1rem;
+  overflow: hidden;
+}
+
+.list-resto-favorite .box-container .box .image img {
+  height: 100%;
+  width: 100%;
+  border-radius: 0.5rem;
+  object-fit: cover;
+}
+
+.list-resto-favorite .box-container .box .content {
+  padding: 2rem;
+}
+
+.list-resto-favorite .box-container .box .content h3 {
+  font-size: 2.5rem;
+  color: $coklat1;
+}
+
+.list-resto-favorite .box-container .box .content p {
+  font-size: 1.7rem;
+  text-align: justify;
+  color: $coklat1;
+  line-height: 2;
+  padding: 1rem 0;
+}
+
+/* end */
+
+/* footer */
+.footer {
+  background: $pink1;
+  text-align: center;
+  padding: 3rem;
+  font-size: 2rem;
+  color: $coklat1;
+}
+
+/* sweetalert */
+.my-swal {
+  width: 100%;
+  height: 100%;
+}
+.my-swal-container,
+.my-swal-popup,
+.my-swal-title {
+  font-size: 2.3rem !important;
+  color: $coklat1 !important;
+}
+.my-swal-popup,
+.my-swal-title {
+  background-color: $bg !important;
+}
+
+.prevent-swal-padding {
+  padding-right: 0 !important;
+}
+
+/*
+  Like
+*/
+.like-button {
+  min-width: 44px;
+  min-height: 44px;
+  z-index: 999;
+  width: 55px;
+  height: 55px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: $coklat1;
+  position: fixed;
+  bottom: 16px;
+  right: 16px;
+  border-radius: 50%;
+  border: 0;
+  font-size: 20px;
+  color: $bg;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.like-button:hover {
+  background-color: $hitam;
+}
+.like-button:focus {
+  background-color: $hitam;
+  border: 0.4rem solid $abu2;
+  border-radius: 50%rem;
+}
+.like-button-un {
+  min-width: 44px;
+  min-height: 44px;
+  z-index: 999;
+  width: 55px;
+  height: 55px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: $coklat1 !important;
+  position: fixed;
+  bottom: 16px;
+  right: 16px;
+  border-radius: 50%;
+  border: 0;
+  font-size: 20px;
+  color: red;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.like-button-un:hover {
+  background-color: $hitam !important;
+  color: maroon;
+}
+
+.like-button-un:focus {
+  background-color: $hitam !important;
+  border: 0.4rem solid maroon;
+  border-radius: 50%rem;
+}
+
+.loading-indicator {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+
+.loading-indicator__circle {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 4px solid #ccc;
+  border-top-color: $coklat1;
+  animation: loading-animation 1s linear infinite;
+  margin-bottom: 10px;
+}
+
+.loading-indicator__text {
+  font-size: 18px;
+  color: $coklat1;
+}
+
+.error-page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+
+.error-page__title {
+  font-size: 8rem;
+  color: $coklat1;
+  margin-bottom: 10px;
+}
+
+.error-page__message {
+  font-size: 4rem;
+  color: $bg;
+}
+
+@keyframes loading-animation {
+  0% {
+    transform: rotate(0);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+#resto,
+#resto-detail,
+#resto-favorite {
+  scroll-margin-top: 10px;
+}
